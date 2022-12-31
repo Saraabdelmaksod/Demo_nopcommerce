@@ -3,7 +3,6 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 
@@ -15,20 +14,21 @@ public class RegisterWithBDDTest extends BaseTest
      return readExcelFileObject.readExcelData();
 
     }
+
     @Test(dataProvider = "testData")
     public void testRegister(String fname, String sname,String email, String password)
     {
-        homePageObject.setClickOnRegisterBtn();
+        homePageObject.clickOnRegisterBtn();
         registerPageObject.selectGender("Male");
-        registerPageObject.enterValidFirstname(fname);
-        registerPageObject.enterValidSecondname(sname);
-        registerPageObject.enterValidEmail(email);
-        registerPageObject.enterValidPassword(password);
-        registerPageObject.setClickOnRegisterBtn();
+        registerPageObject.enterFirstname(fname);
+        registerPageObject.enterSecondName(sname);
+       // registerPageObject.enterEmail(email);
+        registerPageObject.enterPassword(password);
+        registerPageObject.clickOnRegisterBtn();
         Assert.assertEquals(welcomePageObject.getMessageAfterRegister(),"Your registration completed");
         welcomePageObject.setClickOnLogout();
-        homePageObject.setClickOnLoginBtn();
-        loginPageObject.loginWithValidUserAndPassword(email,password);
+        homePageObject.clickOnLoginBtn();
+        loginPageObject.loginWithUsernameAndPassword(email,password);
         welcomePageObject.setClickOnLogout();
         Assert.assertTrue(storeWelcomePageObject.getText());
 

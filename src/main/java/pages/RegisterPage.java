@@ -29,25 +29,27 @@ public class RegisterPage extends BasePage{
         }
 
     }
-    public void enterValidFirstname(String userName1)
+    public void enterFirstname(String userName1)
     {
         setTextElementText(firstName, userName1);
     }
-    public void enterValidSecondname(String subUserName)
+    public void enterSecondName(String subUserName)
     {
         setTextElementText(lastName,subUserName);
     }
-    public void enterValidEmail(String userMail)
+
+
+    public void enterEmail(String userMail)
     {
         setTextElementText(email,userMail);
 
     }
-    public void enterValidPassword( String userPassword)
+    public void enterPassword(String userPassword)
     {
         setTextElementText(password,userPassword);
         setTextElementText(confirmPassword,userPassword);
     }
-    public void setClickOnRegisterBtn()
+    public void clickOnRegisterBtn()
     {
         clickButton(registerBtn2);
     }

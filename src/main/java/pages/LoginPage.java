@@ -13,7 +13,7 @@ public class LoginPage extends BasePage{
     By loginBtn= By.xpath("//button[contains(text(),'Log in')]");
 
 
-    public void loginWithValidUserAndPassword(String userMail , String userPassword)
+    public void loginWithUsernameAndPassword(String userMail , String userPassword)
     {
         setTextElementText(loginMail, userMail);
         setTextElementText(loginPassword, userPassword);

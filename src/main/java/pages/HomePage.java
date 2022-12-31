@@ -11,15 +11,22 @@ public class HomePage extends BasePage {
     }
     By registerBtn= By.xpath("//a[contains(text(),'Register')]");
     By loginBtn=By.xpath("//a[contains(text(),'Log in')]");
+    By shoppingCart= By.id("topcartlink");
 
 
-    public void setClickOnRegisterBtn()
+    public void clickOnRegisterBtn()
     {
         clickButton(registerBtn);
     }
 
-    public void setClickOnLoginBtn()
+    public void clickOnLoginBtn()
     {
         clickButton(loginBtn);
+    }
+    public void clickOnShoppingCart() throws InterruptedException {
+        Thread.sleep(3000);
+        waitUntilElementClickable(shoppingCart);
+
+        clickButton(shoppingCart);
     }
 }
