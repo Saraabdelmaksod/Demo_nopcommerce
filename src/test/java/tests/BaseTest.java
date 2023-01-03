@@ -24,6 +24,7 @@ public static ReadExcelFile readExcelFileObject;
 
 public static ProductPage productPageObject;
 public static ShoppingCartPage shoppingCartPageObject;
+public static Actions actions;
 
 
 
@@ -45,6 +46,7 @@ public void setUpDriver()
    readExcelFileObject=new ReadExcelFile();
    productPageObject=new ProductPage(driver);
    shoppingCartPageObject=new ShoppingCartPage(driver);
+   actions=new Actions(driver);
 
 
 

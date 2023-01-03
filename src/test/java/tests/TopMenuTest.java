@@ -13,9 +13,9 @@ public class TopMenuTest extends BaseTest{
 
 
     @Test
-    public void test() {
+    public void shouldBeAbleToSelectCellPhone() {
 
-       storeWelcomePageObject.select();
+       storeWelcomePageObject.selectAnyCellPhoneFromSubMenu();
         Assert.assertTrue(driver.getCurrentUrl().contains("cell-phones"));
     }
 }
